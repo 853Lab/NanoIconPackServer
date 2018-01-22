@@ -154,7 +154,9 @@ function purifyComponent(component) {
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a class="visible-xs-block" href="https://github.com/by-syk/NanoIconPackServer" target="_blank">GitHub</a></li>
+      <li><a class="visible-xs-block" href="javascript:void(0);" onclick="$('#donateDlg').modal('show')">捐赠支持</a></li>
       <li><a class="hidden-xs" href="https://github.com/by-syk/NanoIconPackServer" target="_blank" title="去 GitHub 查看源码">&nbsp;<i class="fa fa-github fa-lg"></i>&nbsp;</a></li>
+      <li><a class="hidden-xs" href="javascript:void(0);" onclick="$('#donateDlg').modal('show')" title="捐赠支持">&nbsp;<i class="fa fa-credit-card fa-lg"></i>&nbsp;</a></li>
     </ul>
   </div>
 </div>
@@ -191,6 +193,34 @@ function purifyComponent(component) {
   </div>-->
 </div>
 
+<div id="donateDlg" class="modal fade">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">捐赠支持</h4>
+  </div>
+  <div class="modal-body">
+    <p>目前 NanoIconPack 服务器由By_syk和853Lab维护并持续为接入的用户提供服务，尚无任何盈利。如果您有所受益，不妨与我分担服务器费用。在此谢过！</p>
+    <p>By_syk的支付宝：<a href="javascript:void(0);" onclick="copyText('By_syk@163.com')">By_syk@163.com <i class="fa fa-clone"></i></a></p>
+	<p>Sonic853的红包码：</p>
+    <div class="row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+      <img src="../static/imgs/853d1.png" width="119px">
+    </div></div>
+	<p>Sonic853的支付宝：</p>
+    <div class="row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+      <img src="../static/imgs/853d2.png" width="119px">
+    </div></div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+  </div>
+</div>
+</div>
+</div>
+
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <table border="0" align="center" height="50px">
   <tr height="50px"><td height="50px" valign="middle" align="center">
@@ -198,13 +228,13 @@ function purifyComponent(component) {
     <small>
       Copyright &copy; 2017 <a href="mailto:By_syk@163.com">By_syk</a>. All rights reserved.
       <br />
-      <a href="http://www.miibeian.gov.cn">蜀ICP备16010934号</a>
+      <a href="http://www.miibeian.gov.cn" rel="nofollow">桂ICP备15009300号-2</a> - <a href="https://853lab.com">853Lab.com</a>
     </small>
   </div>
   <div class="hidden-xs copyright">
     <small>
       Copyright &copy; 2017 <a href="mailto:By_syk@163.com">By_syk</a>. All rights reserved.
-      | <a href="http://www.miibeian.gov.cn" target="_blank">蜀ICP备16010934号</a>
+      | <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">桂ICP备15009300号-2</a> - <a href="https://853lab.com">853Lab.com</a>
     </small>
   </div>
   </td></tr>

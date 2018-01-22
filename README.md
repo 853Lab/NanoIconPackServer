@@ -29,14 +29,16 @@ npm install mysql
 npm install express
 npm install body-parser
 npm install cookie-parser
-npm install log4j
+npm install log4js
 npm install uuid
 ```
 
-在建好库表后（[库表结构](https://github.com/by-syk/NanoIconPackServer/blob/master/dll/sql.dll)），启动：
+在MySQL创建数据库，导入[nanoiconpack.sql](https://github.com/853Lab/NanoIconPackServer/blob/master/sql/nanoiconpack.sql)数据表，然后在mysql.js文件设置MySQL连接配置（mysql.js在“项目目录/src/utils/”目录下）
+
+在建好库表后，启动：
 
 ```
-cd /home/NanoIconPackServer/src
+cd ！你的项目目录！/src
 forever start nano8082.js
 forever start nano8083.js
 ```
@@ -50,7 +52,7 @@ forever start nano8083.js
 >   ├ src/        // 接口部分
 >   ├ pages/      // 网页部分
 >   ├ logs/       // 日志存放文件夹
->   ├ dll/        // 库表（运行无关）
+>   ├ sql/        // 库表（运行无关）
 >   ├ art/        // 图（运行无关）
 >   ├ .gitignore  // （运行无关）
 >   ├ LICENSE     // （运行无关）
