@@ -20,7 +20,9 @@
 
 ### 服务器搭建
 
-开发者的搭建环境是 **Ubuntu 14.04.4**、**Node.js v6.2.0**、**MySQL v5.5.53**，并使用 [**forever** 模块](https://github.com/foreverjs/forever)来持久化运行。
+开发者的搭建环境是 **Ubuntu 14.04.4**、**Node.js v6.2.0**、**MySQL v5.5.53**，853Lab的搭建环境是 **Windows Server 2016**、**Node.js v8.9.4**、**MySQL v8.0.3**
+
+使用 [**forever** 模块](https://github.com/foreverjs/forever)来持久化运行。
 
 除了 **forever**，还依赖以下 Node.js 模块：
 
@@ -33,7 +35,22 @@ npm install log4js
 npm install uuid
 ```
 
-在MySQL创建数据库，导入[nanoiconpack.sql](https://github.com/853Lab/NanoIconPackServer/blob/master/sql/nanoiconpack.sql)数据表，然后在mysql.js文件设置MySQL连接配置（mysql.js在“项目目录/src/utils/”目录下）
+版本5.7.5以及以上的MySQL数据库在创建数据前，需要去掉去掉 sql_mode 的 ONLY_FULL_GROUP_BY。（5.7.5之前的MySQL可以直接忽视）
+
+首先要在mysql下获取sql_mode的内容：
+
+```
+mysql> select @@sql_mode;
+```
+
+然后拷贝获取到的sql_mode内容，在mysql的配置文件下设置sql_mode。
+
+```
+[mysqld]
+sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+```
+
+然后在MySQL创建数据库，导入[nanoiconpack.sql](https://github.com/853Lab/NanoIconPackServer/blob/master/sql/nanoiconpack.sql)数据表，然后在mysql.js文件设置MySQL连接配置（mysql.js在“项目目录/src/utils/”目录下）
 
 在建好库表后，启动：
 
